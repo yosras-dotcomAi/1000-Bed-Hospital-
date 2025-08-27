@@ -1,0 +1,10 @@
+curl -X POST http://127.0.0.1:8000/patients -H "Content-Type: application/json" -d '{
+  "name": "Ahmed Ali",
+  "email": "ahmed@example.com",
+  "preferred_channel": "console"
+}'
+
+curl -X POST http://127.0.0.1:8000/schedules -H "Content-Type: application/json" -d '{
+  "patient_id": 1,
+  "interval_hours": 6,
+  "active": true 
