@@ -1,9 +1,0 @@
-KPI,Result,Target,Status
-Hospital bed occupancy,84.7%,85%,Met
-ICU Adult occupancy,92.3%,<92%,Not met
-ICU Adult days above 92%,53%,-,-
-Average length of stay,4.28 days,4.5 days,Met
-ED arrival to ward admission (median),152 min,<30 min,Not met
-Patients meeting the 30-min ED target,0%,-,-
-Beds in 'Cleaning' status,2.3%,-,-
-"Forecast occupancy, next 30 days (avg)",84.3%,85%,-
