@@ -4,8 +4,9 @@
 
 | | |
 |---|---|
-| **Live dashboard** | [Open the Streamlit app](STREAMLIT-LINK) |
-| **Project slides** | [View the presentation](docs/Hospital_1000Bed_Slides.pptx) |
+| **Live dashboard** |https://fnrul4q89trrhotapbwfac.streamlit.app/
+| **Project slides** |[Hospital_1000Bed_Slides.pptx](https://github.com/user-attachments/files/34610951/Hospital_1000Bed_Slides.pptx)
+
 
 ## Objective
 
