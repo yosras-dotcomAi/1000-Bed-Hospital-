@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| **Live dashboard** |https://fnrul4q89trrhotapbwfac.streamlit.app/
-| **Project slides** |[Hospital_1000Bed_Slides.pptx](https://github.com/user-attachments/files/34610951/Hospital_1000Bed_Slides.pptx)
+| **Live dashboard** | [Open the Streamlit dashboard](https://fnrul4q89trrhotapbwfac.streamlit.app/) |
+| **Project slides** | [View the presentation](https://github.com/user-attachments/files/34610951/Hospital_1000Bed_Slides.pptx) |
 
 
 ## Objective
@@ -14,7 +14,7 @@ Assess bed capacity and operational performance of a large hospital against 10 e
 
 ## The Dataset
 
-`data/Hospital_1000Bed_Dataset.xlsx`: 8 sheets, about 108,000 rows, 92 days (27 April to 27 July 2026).
+`Hospital_1000Bed_Dataset.xlsx`: 8 sheets, about 108,000 rows, 92 days (27 April to 27 July 2026).
 
 | Sheet | Rows | Content |
 |---|---|---|
@@ -29,7 +29,7 @@ Assess bed capacity and operational performance of a large hospital against 10 e
 
 ## Interactive dashboard
 
-The [live Streamlit dashboard](STREAMLIT-LINK) has seven tabs and filters for department and dates: an executive scorecard, bed capacity, critical care, patient flow and length of stay, staffing and turnover, the forecast, and dataset checks.
+The [live Streamlit dashboard](https://fnrul4q89trrhotapbwfac.streamlit.app/) has seven tabs and filters for department and dates: an executive scorecard, bed capacity, critical care, patient flow and length of stay, staffing and turnover, the forecast, and dataset checks.
 
 ## The 10 KPIs against their targets
 
@@ -54,6 +54,12 @@ The [live Streamlit dashboard](STREAMLIT-LINK) has seven tabs and filters for de
 4. **Staffing sits exactly on target, with no margin.** Average ratios match the targets (1:2 in critical care, 1:5 on wards), but the ratio is worse than the target on 33% of critical care unit-days and 40% of ward-days. Staffing is a daily headcount, so a shift-level ratio would be higher.
 5. **Length of stay is on target** at 4.28 days (4.37 days without day-case dialysis).
 
+## Charts
+
+![Occupancy by department](chart_occupancy_by_department.png)
+
+![ICU Adult daily occupancy against the 92% safe limit](chart_icu_adult_trend.png)
+
 ## Honest Data Checks
 
 - **The bed turnover gap needs care.** Turnover calculated from the admissions table is 3.2 discharges per bed per month, but that table explains only 55% of occupied bed-days (42,672 of 77,954). Using occupancy and length of stay together, the implied turnover is about 5.9, still below the target of 7 but much closer. The admissions table appears to be a partial record.
@@ -76,7 +82,7 @@ These are hypotheses from a synthetic dataset, to be tested with real operationa
 
 ```
 pip install -r requirements.txt
-python hospital_capacity_analysis.py    # creates department_scorecard.csv, kpi_scorecard.csv and 4 charts
+python analyze_beds.py                  # creates department_scorecard.csv, kpi_scorecard.csv and 4 charts
 streamlit run app.py                    # opens the interactive dashboard
 ```
 
@@ -85,24 +91,22 @@ streamlit run app.py                    # opens the interactive dashboard
 ```
 1000-Bed-Hospital-/
 ├── app.py                              # Streamlit dashboard
+├── analyze_beds.py                     # KPI analysis and charts
+├── Hospital_1000Bed_Dataset.xlsx       # Synthetic dataset (8 sheets)
+├── department_scorecard.csv            # Output of analyze_beds.py
+├── kpi_scorecard.csv                   # Output of analyze_beds.py
+├── chart_*.png                         # Charts created by analyze_beds.py
 ├── requirements.txt
 ├── .streamlit/
 │   └── config.toml                     # Dashboard theme
-├── hospital_capacity_analysis.py       # KPI analysis and charts
-├── data/
-│   └── Hospital_1000Bed_Dataset.xlsx   # Synthetic dataset (8 sheets)
-├── docs/
-│   └── Hospital_1000Bed_Slides.pptx
 └── README.md
 ```
 
 ## Project Status
 
 - [x] Synthetic dataset and Python KPI analysis
-- [x] Power BI executive dashboard (star schema, DAX measures, KPI validation)
 - [x] Interactive Streamlit dashboard
 - [x] Project slides
-- [ ] Tableau Public rebuild (in progress)
 
 ## Author
 
